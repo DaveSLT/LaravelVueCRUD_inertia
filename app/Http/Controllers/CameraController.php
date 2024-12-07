@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cameras;
+use App\Models\User;
 use App\Models\Payments;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
@@ -28,7 +29,7 @@ class CameraController extends Controller
     public function dashboard()
     {
         $cameras = Cameras::all(); // Fetch all cameras
-        return Inertia::render('AdminDashboard', ['cameras' => $cameras]);
+        return Inertia::render('CameraDashboard', ['cameras' => $cameras]);
     }
 
     public function updatePrice(Request $request, Cameras $camera)

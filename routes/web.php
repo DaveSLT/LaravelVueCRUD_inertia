@@ -7,20 +7,25 @@ use Inertia\Inertia;
 use App\Http\Controllers\CameraController;
 use App\Http\Controllers\UserController;
 
+//User dashboard
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard');
+    Route::get('/UserDashboard', [UserController::class, 'index'])->name('UserDashboard');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
 });
 
-//dashboard
-Route::get('/Admindashboard', [CameraController::class, 'dashboard'])
+//Camera dashboard
+Route::get('/CameraDashboard', [CameraController::class, 'dashboard'])
     ->middleware(['auth', 'verified'])
-    ->name('AdminDashboard');
+    ->name('CameraDashboard');
 
 Route::post('/cameras/{camera}', [CameraController::class, 'updatePrice'])
     ->middleware(['auth', 'verified'])
     ->name('cameras.updatePrice');
 
+//DASHBOARD
+Route::get('/Dashboard', function () {
+    return Inertia::render('AdminDashboard');
+})->middleware(['auth', 'verified'])->name('Dashboard');
 
 //Guest_shop
 Route::get('/shop_guest', [CameraController::class, 'index_guest'])->name('shop_guest');

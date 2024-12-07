@@ -129,6 +129,11 @@
                 >
                     <nav class="space-y-4 p-4">
                         <Link
+                            :href="route('CameraDashboard')"
+                            class="text-white hover:text-purple-400"
+                            >Dashboard</Link
+                        >
+                        <Link
                             :href="route('home')"
                             class="block text-white hover:text-purple-400"
                             >Home</Link

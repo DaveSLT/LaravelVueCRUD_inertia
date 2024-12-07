@@ -18,6 +18,11 @@
                     <!-- Desktop Navigation -->
                     <nav class="hidden md:flex space-x-6 items-center">
                         <Link
+                            :href="route('CameraDashboard')"
+                            class="text-white hover:text-purple-400"
+                            >Dashboard</Link
+                        >
+                        <Link
                             :href="route('home')"
                             class="text-white hover:text-purple-400"
                             >Home</Link

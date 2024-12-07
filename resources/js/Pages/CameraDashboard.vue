@@ -48,48 +48,62 @@
         </Link>
         <!-- Content -->
         <div class="container mx-auto py-8 px-4">
-            <h1 class="text-2xl font-bold mb-6 text-center">User Dashboard</h1>
+            <h2 class="text-2xl font-bold mb-6 text-center">Manage Cameras</h2>
 
-            <!-- User Table -->
+            <!-- Camera Table -->
             <div class="overflow-x-auto">
                 <table
                     class="table-auto w-full border-collapse bg-gray-800 text-sm shadow-md rounded-lg overflow-hidden"
                 >
                     <thead>
                         <tr class="bg-gray-700">
-                            <th class="border border-gray-600 px-4 py-2">ID</th>
-                            <th class="border border-gray-600 px-4 py-2">
-                                Name
+                            <th
+                                class="border border-gray-600 px-4 py-2 text-left"
+                            >
+                                Camera Name
                             </th>
-                            <th class="border border-gray-600 px-4 py-2">
-                                Email
+                            <th
+                                class="border border-gray-600 px-4 py-2 text-left"
+                            >
+                                Category
                             </th>
-                            <th class="border border-gray-600 px-4 py-2">
+                            <th
+                                class="border border-gray-600 px-4 py-2 text-left"
+                            >
+                                Price ($)
+                            </th>
+                            <th
+                                class="border border-gray-600 px-4 py-2 text-left"
+                            >
                                 Actions
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr
-                            v-for="user in users"
-                            :key="user.id"
+                            v-for="camera in cameras"
+                            :key="camera.camera_id"
                             class="hover:bg-gray-700"
                         >
                             <td class="border border-gray-600 px-4 py-2">
-                                {{ user.id }}
+                                {{ camera.camera_name }}
                             </td>
                             <td class="border border-gray-600 px-4 py-2">
-                                {{ user.name }}
+                                {{ camera.camera_category }}
                             </td>
                             <td class="border border-gray-600 px-4 py-2">
-                                {{ user.email }}
+                                <input
+                                    type="number"
+                                    v-model="camera.camera_price"
+                                    class="w-full rounded-lg bg-gray-700 text-white border border-gray-600 px-2 py-1"
+                                />
                             </td>
                             <td class="border border-gray-600 px-4 py-2">
                                 <button
-                                    @click="deleteUser(user.id)"
-                                    class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600"
+                                    @click="updatePrice(camera)"
+                                    class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg"
                                 >
-                                    Delete
+                                    Update
                                 </button>
                             </td>
                         </tr>
@@ -99,27 +113,22 @@
         </div>
     </div>
 </template>
+
 <script setup>
 import { router, Link } from "@inertiajs/vue3";
-</script>
-<script>
-export default {
-    props: {
-        users: Array,
-    },
-    methods: {
-        deleteUser(id) {
-            if (confirm("Are you sure you want to delete this user?")) {
-                router.delete(`/users/${id}`, {
-                    preserveState: true,
-                    onSuccess: () => alert("User deleted successfully."),
-                });
-            }
-        },
-    },
+
+const props = defineProps({
+    cameras: Array,
+});
+
+// Function to update price
+const updatePrice = (camera) => {
+    router.post(route("cameras.updatePrice", camera.camera_id), {
+        price: camera.camera_price,
+    });
 };
 </script>
 
 <style scoped>
-/* Optional: Custom additional styles */
+/* Optional: Add specific styles */
 </style>
