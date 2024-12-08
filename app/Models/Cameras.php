@@ -28,4 +28,8 @@ class Cameras extends Model
         'camera_price',
         'camera_category',
     ];
+    public function payments()
+    {
+        return $this->hasMany(Payments::class, 'camera_id');
+    }
 }

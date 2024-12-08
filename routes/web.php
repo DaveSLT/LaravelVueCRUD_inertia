@@ -7,6 +7,7 @@ use Inertia\Inertia;
 use App\Http\Controllers\CameraController;
 use App\Http\Controllers\UserController;
 
+
 //User dashboard
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/UserDashboard', [UserController::class, 'index'])->name('UserDashboard');
@@ -30,15 +31,14 @@ Route::get('/Dashboard', function () {
 //Guest_shop
 Route::get('/shop_guest', [CameraController::class, 'index_guest'])->name('shop_guest');
 
-//Authenticated_shop
+// //Authenticated_shop
 Route::get('/shop', [CameraController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('shop');
 
 Route::post('/shop', [CameraController::class, 'store'])
     ->middleware(['auth', 'verified'])->name('shop.store');
-//end
-
+// //end
 
 
 Route::get('/', function () {

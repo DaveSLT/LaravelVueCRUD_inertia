@@ -19,4 +19,13 @@ class Payments extends Model
         'rent_date',
         'return_date',
     ];
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function camera()
+    {
+        return $this->belongsTo(Cameras::class, 'camera_id');
+    }
 }
