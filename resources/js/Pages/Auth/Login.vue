@@ -37,15 +37,14 @@ const submit = () => {
             <div v-if="status" class="mb-4 text-sm font-medium text-green-600">
                 {{ status }}
             </div>
-            <h1 class="text-3xl font-bold text-purple-500 text-center mb-6">
+            <div class="text-3xl font-bold text-center mb-6">
+                <h1 class="text-purple-500">Login</h1>
                 <h2
-                    class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
                 >
                     ZoomPro
                 </h2>
-
-                Login
-            </h1>
+            </div>
             <form @submit.prevent="submit">
                 <div>
                     <InputLabel

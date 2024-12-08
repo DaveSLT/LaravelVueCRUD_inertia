@@ -18,10 +18,15 @@
                     <!-- Desktop Navigation -->
                     <nav class="hidden md:flex space-x-6 items-center">
                         <Link
+                            v-if="
+                                $page.props.auth?.user?.email ===
+                                'salte@salte.com'
+                            "
                             :href="route('CameraDashboard')"
                             class="text-white hover:text-purple-400"
-                            >Dashboard</Link
                         >
+                            Dashboard
+                        </Link>
                         <Link
                             :href="route('home')"
                             class="text-white hover:text-purple-400"

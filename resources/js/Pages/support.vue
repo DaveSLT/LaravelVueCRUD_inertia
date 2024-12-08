@@ -129,10 +129,15 @@
                 >
                     <nav class="space-y-4 p-4">
                         <Link
+                            v-if="
+                                $page.props.auth?.user?.email ===
+                                'salte@salte.com'
+                            "
                             :href="route('CameraDashboard')"
                             class="text-white hover:text-purple-400"
-                            >Dashboard</Link
                         >
+                            Dashboard
+                        </Link>
                         <Link
                             :href="route('home')"
                             class="block text-white hover:text-purple-400"

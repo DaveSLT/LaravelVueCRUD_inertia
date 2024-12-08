@@ -50,7 +50,6 @@ class CameraController extends Controller
 
         $validated = $request->validate([
             'user_id' =>   auth()->id(),
-
             'camera_id' => 'required|exists:cameras,camera_id',
             'camera_name' => 'required|string',
             'camera_category' => 'required|string',
@@ -61,14 +60,6 @@ class CameraController extends Controller
             'return_date' => 'required|date|after_or_equal:rent_date',
         ]);
 
-
-
         Payments::create($validated);
-
-        // return response()->json([
-        //     'message' => 'Rental created successfully!',
-        //     'data' => $rental,
-        // ]);
-        // // return redirect()->back()->with('success', 'Payment recorded successfully!');
     }
 }

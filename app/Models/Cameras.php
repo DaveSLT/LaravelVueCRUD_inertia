@@ -23,6 +23,7 @@ class Cameras extends Model
     public $timestamps = true;
 
     protected $fillable = [
+        'camera_id',
         'camera_name',
         'camera_price',
         'camera_category',
