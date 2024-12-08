@@ -83,7 +83,7 @@ function handleImageError() {
 
         <!-- Hero Section -->
         <section
-            class="hero pt-24 py-12 flex-grow bg-gradient-to-br from-gray-900 to-gray-700"
+            class="hero pt-24 py-12 flex-grow bg-gradient-to-br from-green-900 to-green-700"
         >
             <div
                 class="container mx-auto flex flex-col md:flex-row items-center"
