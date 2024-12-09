@@ -1,21 +1,19 @@
-I'll now provide the updated `myaccount.vue` file with the requested changes:
-```vue
+
 <template>
     <div
-        class="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white"
+        class="min-h-screen bg-gradient-to-r from-teal-950 via-teal-900 to-teal-950 text-white"
     >
         <!-- Header with Navbar -->
         <header
             class="bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg fixed w-full z-10"
         >
-            <div class="container mx-auto px-4 py-4">
-                <div class="flex items-center justify-between">
-                    <!-- Logo -->
-                    <h1
-                        class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
-                    >
+            <div class="container mx-auto px-4 py-3">
+                <div class="container mx-auto flex justify-between items-center">
+                <Link :href="route('home')" class="text-2xl font-bold tracking-tighter group">
+                    <span class="inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-blue-500 group-hover:from-blue-500 group-hover:to-purple-400 transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
                         ZoomPro
-                    </h1>
+                    </span>
+                </Link>
 
                     <!-- Desktop Navigation -->
                     <nav class="hidden md:flex space-x-6 items-center">
@@ -31,23 +29,47 @@ I'll now provide the updated `myaccount.vue` file with the requested changes:
                         </Link>
                         <Link
                             :href="route('home')"
-                            class="text-white hover:text-purple-400"
-                            >Home</Link
+                            class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+                            >
+                            
+                            <span class="relative z-10 transition-colors duration-300 group-hover:text-gray-900">Home</span>
+                            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300  rounded-full"></span>
+                            
+                            
+                            </Link
                         >
                         <Link
                             :href="route('shop')"
-                            class="text-white hover:text-purple-400"
-                            >Shop</Link
+                            class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+                            >
+                            
+                            <span class="relative z-10 transition-colors duration-300 group-hover:text-gray-900">Shop</span>
+                            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300  rounded-full"></span>
+                            
+                            
+                            </Link
                         >
                         <Link
                             :href="route('myaccount')"
-                            class="text-white hover:text-purple-400"
-                            >Account</Link
+                            class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+                            >
+                            
+                            <span class="relative z-10 transition-colors duration-300 group-hover:text-gray-900">Account</span>
+                            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300  rounded-full"></span>
+                            
+                            
+                            </Link
                         >
                         <Link
                             :href="route('support')"
-                            class="text-white hover:text-purple-400"
-                            >Support</Link
+                            class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+                            >
+                            
+                            <span class="relative z-10 transition-colors duration-300 group-hover:text-gray-900">Support</span>
+                            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300  rounded-full"></span>
+                            
+                            
+                            </Link
                         >
 
                         <!-- Settings Dropdown -->
@@ -55,7 +77,7 @@ I'll now provide the updated `myaccount.vue` file with the requested changes:
                             <Dropdown align="right" width="48">
                                 <template #trigger>
                                     <button
-                                        class="inline-flex items-center text-white bg-transparent border border-transparent px-3 py-2 text-sm font-medium hover:text-purple-400 focus:outline-none"
+                                        class="inline-flex items-center text-white bg-transparent border border-transparent px-3 py-2 text-sm font-medium hover:text-green-400 focus:outline-none"
                                     >
                                         {{ $page.props.auth.user.name }}
                                         <svg
@@ -194,8 +216,8 @@ I'll now provide the updated `myaccount.vue` file with the requested changes:
             <h2 class="text-4xl font-bold mb-8 text-center">My Account</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Account Details Section -->
-                <div class="bg-gray-800 rounded-lg shadow-lg p-6">
-                    <h3 class="text-2xl font-semibold mb-4 text-purple-400">
+                <div class="bg-gray-900 rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-400">
                         Account Details
                     </h3>
                     <p class="text-gray-300 mb-2">
@@ -210,15 +232,15 @@ I'll now provide the updated `myaccount.vue` file with the requested changes:
                         Active
                     </p>
                     <h3
-                        class="text-2xl font-semibold mb-4 mt-8 text-purple-400"
+                        class="text-2xl font-semibold mb-4 mt-8 text-blue-400"
                     >
                         Settings
                     </h3>
                     <Link :href="route('profile.edit')">Profile Settings</Link>
                 </div>
                 <!-- Cameras Rented Section -->
-                <div class="bg-gray-800 rounded-lg shadow-lg p-6">
-                    <h3 class="text-2xl font-semibold mb-4 text-purple-400">
+                <div class="bg-gray-900 rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-semibold mb-4 text-red-700">
                         Cameras Rented
                     </h3>
                     <!-- <ul v-if="rentedCameras.length > 0" class="space-y-4">

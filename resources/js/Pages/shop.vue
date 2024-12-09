@@ -1,19 +1,18 @@
 <template>
     <div
-        class="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 to-gray-800 text-white"
+        class="min-h-screen flex flex-col bg-gradient-to-r from-teal-950 via-teal-900 to-teal-950 text-white"
     >
         <!-- Header with Navbar -->
         <header
             class="bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg fixed w-full z-10"
         >
-            <div class="container mx-auto px-4 py-4">
-                <div class="flex items-center justify-between">
-                    <!-- Logo -->
-                    <h1
-                        class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
-                    >
+            <div class="container mx-auto px-3 py-3">
+                <div class="container mx-auto flex justify-between items-center">
+                <Link :href="route('home')" class="text-2xl font-bold tracking-tighter group">
+                    <span class="inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-blue-500 group-hover:from-blue-500 group-hover:to-purple-400 transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
                         ZoomPro
-                    </h1>
+                    </span>
+                </Link>
 
                     <!-- Desktop Navigation -->
                     <nav class="hidden md:flex space-x-6 items-center">
@@ -23,29 +22,54 @@
                                 'salte@salte.com'
                             "
                             :href="route('CameraDashboard')"
-                            class="text-white hover:text-purple-400"
+                            class="text-white hover:text-green-400"
                         >
                             Dashboard
                         </Link>
                         <Link
                             :href="route('home')"
-                            class="text-white hover:text-purple-400"
-                            >Home</Link
+                            class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+                            >
+                            
+                            
+                            <span class="relative z-10 transition-colors duration-300 group-hover:text-gray-900">Home</span>
+                            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300  rounded-full"></span>
+                            
+                            
+                            </Link
                         >
                         <Link
                             :href="route('shop')"
-                            class="text-white hover:text-purple-400"
-                            >Shop</Link
+                            class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+                            >
+                            
+                            <span class="relative z-10 transition-colors duration-300 group-hover:text-gray-900">Shop</span>
+                            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300  rounded-full"></span>
+                            
+                            
+                            
+                            </Link
                         >
                         <Link
                             :href="route('myaccount')"
-                            class="text-white hover:text-purple-400"
-                            >Account</Link
+                            class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+                            >
+                            
+                            <span class="relative z-10 transition-colors duration-300 group-hover:text-gray-900">Account</span>
+                            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300  rounded-full"></span>
+                            
+                            
+                            </Link
                         >
                         <Link
                             :href="route('support')"
-                            class="text-white hover:text-purple-400"
-                            >Support</Link
+                            class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+                            >
+                            
+                            <span class="relative z-10 transition-colors duration-300 group-hover:text-gray-900">Support</span>
+                            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300  rounded-full"></span>
+                            
+                            </Link
                         >
 
                         <!-- Settings Dropdown -->
@@ -53,7 +77,7 @@
                             <Dropdown align="right" width="48">
                                 <template #trigger>
                                     <button
-                                        class="inline-flex items-center text-white bg-transparent border border-transparent px-3 py-2 text-sm font-medium hover:text-purple-400 focus:outline-none"
+                                        class="inline-flex items-center text-white bg-transparent border border-transparent px-3 py-2 text-sm font-medium hover:text-blue-400 focus:outline-none"
                                     >
                                         {{ $page.props.auth.user.name }}
                                         <svg
@@ -140,22 +164,22 @@
                     <nav class="space-y-4 p-4">
                         <Link
                             :href="route('home')"
-                            class="block text-white hover:text-purple-400"
+                            class="block text-white hover:text-blue-400"
                             >Home</Link
                         >
                         <Link
                             :href="route('shop')"
-                            class="block text-white hover:text-purple-400"
+                            class="block text-white hover:text-blue-400"
                             >Shop</Link
                         >
                         <Link
                             :href="route('myaccount')"
-                            class="block text-white hover:text-purple-400"
+                            class="block text-white hover:text-blue-400"
                             >Account</Link
                         >
                         <Link
                             :href="route('support')"
-                            class="block text-white hover:text-purple-400"
+                            class="block text-white hover:text-blue-400"
                             >Support</Link
                         >
 
@@ -169,7 +193,7 @@
                             </div>
                             <Link
                                 :href="route('profile.edit')"
-                                class="block mt-2 text-white hover:text-purple-400"
+                                class="block mt-2 text-white hover:text-blue-400"
                             >
                                 Profile
                             </Link>
@@ -177,7 +201,7 @@
                                 :href="route('logout')"
                                 method="post"
                                 as="button"
-                                class="block mt-2 text-white hover:text-purple-400"
+                                class="block mt-2 text-white hover:text-blue-400"
                             >
                                 Log Out
                             </Link>
@@ -200,11 +224,11 @@
                             @click="selectedCategory = ''"
                             class="flex-1 min-w-[120px] text-center p-6 transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer rounded-lg shadow-lg"
                             :class="{
-                                'bg-purple-900 text-white':
+                                'bg-gray-900 text-white':
                                     selectedCategory !== '',
-                                'bg-purple-850 text-white':
+                                'bg-gray-850 text-white':
                                     selectedCategory === '',
-                                'ring-2 ring-orange-500':
+                                'ring-2 ring-green-500':
                                     selectedCategory === '',
                             }"
                         >
@@ -218,11 +242,11 @@
                             @click="selectedCategory = category"
                             class="flex-1 min-w-[120px] text-center p-6 transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer rounded-lg shadow-lg"
                             :class="{
-                                'bg-purple-900 text-white':
+                                'bg-gray-900 text-white':
                                     selectedCategory !== category,
-                                'bg-purple-850 text-white':
+                                'bg-gray-850 text-white':
                                     selectedCategory === category,
-                                'ring-2 ring-orange-500':
+                                'ring-2 ring-green-500':
                                     selectedCategory === category,
                             }"
                         >
@@ -240,7 +264,7 @@
                             v-model="searchQuery"
                             type="text"
                             placeholder="Search cameras..."
-                            class="w-full pl-12 pr-4 py-3 rounded-full bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                            class="w-full pl-12 pr-4 py-3 rounded-full bg-white-700 text-white placeholder-black-400 focus:outline-none focus:ring-2 focus:ring-gray-950 text-gray"
                         />
                         <svg
                             class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"
@@ -268,7 +292,7 @@
                     <div
                         v-for="camera in filteredCamerasWithImages"
                         :key="camera.camera_id"
-                        class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+                        class="bg-gray-950 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
                     >
                         <img
                             :src="camera.image"
@@ -283,12 +307,12 @@
                                 {{ camera.camera_category }}
                             </p>
                             <div class="flex items-center justify-between">
-                                <span class="text-2xl font-bold text-orange-400"
+                                <span class="text-2xl font-bold text-green-400"
                                     >${{ camera.camera_price }}</span
                                 >
                                 <button
                                     @click="openRentModal(camera)"
-                                    class="bg-purple-600 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-full transition duration-300"
+                                    class="bg-blue-600 hover:bg-green-500 text-white font-bold py-2 px-4 rounded-full transition duration-300"
                                 >
                                     Rent Now
                                 </button>
@@ -299,7 +323,7 @@
             </div>
         </main>
 
-        <footer class="bg-gray-900 py-8">
+        <footer class="bg-gray-950 py-4">
             <div class="container mx-auto px-4 text-center text-gray-400">
                 <p>
                     &copy; {{ new Date().getFullYear() }} ZoomPro. All rights
@@ -340,7 +364,7 @@
                                 <input
                                     v-model="rentStartDate"
                                     type="date"
-                                    class="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50"
+                                    class="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
                                     :min="today"
                                     @change="updateEndDateMin"
                                 />
@@ -353,7 +377,7 @@
                                 <input
                                     v-model="rentEndDate"
                                     type="date"
-                                    class="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50"
+                                    class="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
                                     :min="minEndDate"
                                 />
                             </div>
@@ -362,7 +386,7 @@
                             class="flex flex-col sm:flex-row justify-between items-center bg-gray-700 p-4 rounded-lg"
                         >
                             <p
-                                class="text-orange-400 font-bold text-xl md:text-2xl mb-2 sm:mb-0"
+                                class="text-green-400 font-bold text-xl md:text-2xl mb-2 sm:mb-0"
                             >
                                 Total Cost: ${{ calculateTotalCost }}
                             </p>
@@ -385,7 +409,7 @@
                     </button>
                     <button
                         @click="showConfirmationModal"
-                        class="w-full sm:w-auto bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300"
+                        class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300"
                         :disabled="!isFormValid"
                         :class="{
                             'opacity-50 cursor-not-allowed': !isFormValid,
@@ -423,7 +447,7 @@
                             class="bg-gray-700 p-4 rounded-lg flex flex-col sm:flex-row justify-between items-center"
                         >
                             <p
-                                class="text-orange-400 font-bold text-xl md:text-2xl mb-2 sm:mb-0"
+                                class="text-green-400 font-bold text-xl md:text-2xl mb-2 sm:mb-0"
                             >
                                 Total Cost: ${{ calculateTotalCost }}
                             </p>
@@ -453,7 +477,7 @@
                     </button>
                     <button
                         @click="confirmRent"
-                        class="w-full sm:w-auto bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300"
+                        class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300"
                     >
                         Confirm and Checkout
                     </button>
@@ -490,7 +514,7 @@
                         </p>
                         <div class="bg-gray-700 p-4 rounded-lg">
                             <p
-                                class="text-orange-400 font-bold text-xl md:text-2xl mb-2"
+                                class="text-green-400 font-bold text-xl md:text-2xl mb-2"
                             >
                                 Total Cost: ${{ calculateTotalCost }}
                             </p>
@@ -516,7 +540,7 @@
                 >
                     <button
                         @click="goBackToHome"
-                        class="w-full sm:w-auto bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 text-lg md:text-xl"
+                        class="w-full sm:w-auto bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 text-lg md:text-xl"
                     >
                         Go Back to Home
                     </button>

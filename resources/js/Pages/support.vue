@@ -1,41 +1,49 @@
 <template>
     <div
-        class="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white"
+        class="min-h-screen bg-gradient-to-r from-teal-950 via-teal-900 to-teal-950 text-white"
     >
         <!-- Header with Navbar -->
         <header
             class="bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg fixed w-full z-10"
         >
-            <div class="container mx-auto px-4 py-4">
-                <div class="flex items-center justify-between">
-                    <!-- Logo -->
-                    <h1
-                        class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
-                    >
+            <div class="container mx-auto px-4 py-3">
+                <div class="container mx-auto flex justify-between items-center">
+                <Link :href="route('home')" class="text-2xl font-bold tracking-tighter group">
+                    <span class="inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-blue-500 group-hover:from-blue-500 group-hover:to-purple-400 transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
                         ZoomPro
-                    </h1>
+                    </span>
+                </Link>
 
                     <!-- Desktop Navigation -->
                     <nav class="hidden md:flex space-x-6 items-center">
                         <Link
                             :href="route('home')"
-                            class="text-white hover:text-purple-400"
-                            >Home</Link
+                            class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+                            >
+                            
+                            <span class="relative z-10 transition-colors duration-300 group-hover:text-gray-900">Home</span>
+                            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300  rounded-full"></span>
+                            
+                            
+                            </Link
                         >
                         <Link
                             :href="route('shop')"
-                            class="text-white hover:text-purple-400"
-                            >Shop</Link
+                            class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+                            ><span class="relative z-10 transition-colors duration-300 group-hover:text-gray-900">Shop</span>
+                            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300  rounded-full"></span></Link
                         >
                         <Link
                             :href="route('myaccount')"
-                            class="text-white hover:text-purple-400"
-                            >Account</Link
+                            class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+                            ><span class="relative z-10 transition-colors duration-300 group-hover:text-gray-900">Account</span>
+                            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300  rounded-full"></span></Link
                         >
                         <Link
                             :href="route('support')"
-                            class="text-white hover:text-purple-400"
-                            >Support</Link
+                            class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+                            ><span class="relative z-10 transition-colors duration-300 group-hover:text-gray-900">Support</span>
+                            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300  rounded-full"></span></Link
                         >
 
                         <!-- Settings Dropdown -->
@@ -191,7 +199,7 @@
             <h2 class="text-4xl font-bold mb-8 text-center">Support</h2>
 
             <!-- How to Rent Section -->
-            <section class="mb-12 bg-gray-800 rounded-lg p-6 shadow-lg">
+            <section class="mb-12 bg-gray-900 rounded-lg p-6 shadow-lg">
                 <h3 class="text-2xl font-semibold mb-4 text-purple-400">
                     How to Rent
                 </h3>
@@ -225,7 +233,7 @@
             </section>
 
             <!-- Book an Equipment Test Section -->
-            <section class="mb-12 bg-gray-800 rounded-lg p-6 shadow-lg">
+            <section class="mb-12 bg-gray-900 rounded-lg p-6 shadow-lg">
                 <h3 class="text-2xl font-semibold mb-4 text-purple-400">
                     Book an Equipment Test
                 </h3>
@@ -237,7 +245,7 @@
             </section>
 
             <!-- Terms and Conditions Section -->
-            <section class="mb-12 bg-gray-800 rounded-lg p-6 shadow-lg">
+            <section class="mb-12 bg-gray-900 rounded-lg p-6 shadow-lg">
                 <h3 class="text-2xl font-semibold mb-4 text-purple-400">
                     Terms and Conditions
                 </h3>
@@ -268,7 +276,7 @@
             </section>
 
             <!-- Privacy Policy Section -->
-            <section class="mb-12 bg-gray-800 rounded-lg p-6 shadow-lg">
+            <section class="mb-12 bg-gray-900 rounded-lg p-6 shadow-lg">
                 <h3 class="text-2xl font-semibold mb-4 text-purple-400">
                     Privacy Policy
                 </h3>
@@ -286,7 +294,7 @@
             </section>
 
             <!-- Contact Us Section -->
-            <section class="bg-gray-800 rounded-lg p-6 shadow-lg">
+            <section class="bg-gray-900 rounded-lg p-6 shadow-lg">
                 <h3 class="text-2xl font-semibold mb-4 text-purple-400">
                     Contact Us
                 </h3>
@@ -338,7 +346,7 @@
 
                     <button
                         type="submit"
-                        class="bg-orange-600 text-white py-3 px-6 rounded-lg hover:bg-purple-700 transition duration-300"
+                        class="bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-purple-700 transition duration-300"
                     >
                         Send Message
                     </button>
@@ -346,7 +354,7 @@
             </section>
         </main>
 
-        <footer class="bg-gray-900 py-8">
+        <footer class="bg-gray-900 py-4">
             <div class="container mx-auto px-4 text-center text-gray-400">
                 <p>
                     &copy; {{ new Date().getFullYear() }} ZoomPro. All rights

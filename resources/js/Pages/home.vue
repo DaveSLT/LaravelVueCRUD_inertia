@@ -1,19 +1,18 @@
 <template>
     <div
-        class="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white"
+        class="min-h-screen bg-gradient-to-r from-teal-950 via-teal-900 to-teal-950 text-white"
     >
         <!-- Header with Navbar -->
         <header
             class="bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg fixed w-full z-10"
         >
-            <div class="container mx-auto px-4 py-4">
-                <div class="flex items-center justify-between">
-                    <!-- Logo -->
-                    <h1
-                        class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
-                    >
+            <div class="container mx-auto px-3 py-3">
+                <div class="container mx-auto flex justify-between items-center">
+                <Link :href="route('home')" class="text-2xl font-bold tracking-tighter group">
+                    <span class="inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-blue-500 group-hover:from-blue-500 group-hover:to-purple-400 transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
                         ZoomPro
-                    </h1>
+                    </span>
+                </Link>
 
                     <!-- Desktop Navigation -->
                     <nav class="hidden md:flex space-x-6 items-center">
@@ -23,37 +22,54 @@
                                 'salte@salte.com'
                             "
                             :href="route('CameraDashboard')"
-                            class="text-white hover:text-purple-400"
+                            class="text-white hover:text-green-400"
                         >
                             Dashboard
                         </Link>
                         <Link
                             :href="route('home')"
-                            class="text-white hover:text-purple-400"
-                            >Home</Link
-                        >
+                            class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+                            >
+
+
+                            <span class="relative z-10 transition-colors duration-300 group-hover:text-gray-900">Home</span>
+                            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300  rounded-full"></span>
+                            </Link>
                         <Link
                             :href="route('shop')"
-                            class="text-white hover:text-purple-400"
-                            >Shop</Link
-                        >
+                            class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+                            >
+                            
+                            
+                            <span class="relative z-10 transition-colors duration-300 group-hover:text-gray-900">Shop</span>
+                            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300  rounded-full"></span>
+                            </Link>
                         <Link
                             :href="route('myaccount')"
-                            class="text-white hover:text-purple-400"
-                            >Account</Link
-                        >
+                            class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"  
+                            >
+                            
+                            <span class="relative z-10 transition-colors duration-300 group-hover:text-gray-900">Account</span>
+                            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300  rounded-full"></span>
+
+
+                            </Link>
                         <Link
                             :href="route('support')"
-                            class="text-white hover:text-purple-400"
-                            >Support</Link
-                        >
+                            class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+                            >
+                            
+                            <span class="relative z-10 transition-colors duration-300 group-hover:text-gray-900">Support</span>
+                            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300  rounded-full"></span>
+                            
+                            </Link>
 
                         <!-- Settings Dropdown -->
                         <div class="relative">
                             <Dropdown align="right" width="48">
                                 <template #trigger>
                                     <button
-                                        class="inline-flex items-center text-white bg-transparent border border-transparent px-3 py-2 text-sm font-medium hover:text-purple-400 focus:outline-none"
+                                        class="inline-flex items-center text-white bg-transparent border border-transparent px-3 py-2 text-sm font-medium hover:text-blue-400 focus:outline-none"
                                     >
                                         {{ $page.props.auth.user.name }}
                                         <svg
@@ -140,22 +156,22 @@
                     <nav class="space-y-4 p-4">
                         <Link
                             :href="route('home')"
-                            class="block text-white hover:text-purple-400"
+                            class="block text-white hover:text-blue-400"
                             >Home</Link
                         >
                         <Link
                             :href="route('shop')"
-                            class="block text-white hover:text-purple-400"
+                            class="block text-white hover:text-blue-400"
                             >Shop</Link
                         >
                         <Link
                             :href="route('myaccount')"
-                            class="block text-white hover:text-purple-400"
+                            class="block text-white hover:text-blue-400"
                             >Account</Link
                         >
                         <Link
                             :href="route('support')"
-                            class="block text-white hover:text-purple-400"
+                            class="block text-white hover:text-blue-400"
                             >Support</Link
                         >
 
@@ -169,7 +185,7 @@
                             </div>
                             <Link
                                 :href="route('profile.edit')"
-                                class="block mt-2 text-white hover:text-purple-400"
+                                class="block mt-2 text-white hover:text-blue-400"
                             >
                                 Profile
                             </Link>
@@ -177,7 +193,7 @@
                                 :href="route('logout')"
                                 method="post"
                                 as="button"
-                                class="block mt-2 text-white hover:text-purple-400"
+                                class="block mt-2 text-white hover:text-blue-400"
                             >
                                 Log Out
                             </Link>
@@ -220,7 +236,7 @@
                 <button
                     href="#camera"
                     v-smooth-scroll
-                    class="bg-orange-700 hover:bg-orange-300 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105"
+                    class="bg-green-700 hover:bg-green-950 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105"
                 >
                     Explore Cameras
                 </button>
@@ -233,7 +249,7 @@
                 <h2 class="text-3xl font-bold mb-8 text-center">
                     Featured: EOS R6 Mark II
                 </h2>
-                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-2xl">
+                <div class="bg-teal-800 rounded-lg overflow-hidden shadow-2xl">
                     <div class="md:flex">
                         <div class="md:w-1/2">
                             <video
@@ -259,13 +275,13 @@
                                 enthusiasts alike.
                             </p>
                             <div class="flex items-center justify-between mb-6">
-                                <span class="text-3xl font-bold text-purple-400"
+                                <span class="text-3xl font-bold text-green-500"
                                     >$200/day</span
                                 >
                                 <a
                                     href="#camera"
                                     v-smooth-scroll
-                                    class="bg-orange-700 hover:bg-orange-300 text-white font-bold py-2 px-6 rounded-full transition duration-300"
+                                    class="bg-gradient-to-r from-blue-500 to-green-700 text-white font-bold py-2 px-6 rounded-full transition duration-300 transform hover:scale-105 hover:shadow-lg"
                                 >
                                     Rent Now
                                 </a>
@@ -275,7 +291,7 @@
                             >
                                 <button
                                     @click="togglePlay"
-                                    class="text-white hover:text-purple-400 transition duration-300"
+                                    class="text-white hover:text-blue-400 transition duration-300"
                                 >
                                     <svg
                                         v-if="!isPlaying"
@@ -316,7 +332,7 @@
                                 </button>
                                 <button
                                     @click="toggleMute"
-                                    class="text-white hover:text-purple-400 transition duration-300"
+                                    class="text-white hover:text-blue-400 transition duration-300"
                                 >
                                     <svg
                                         v-if="!isMuted"
@@ -376,7 +392,7 @@
                             <div
                                 v-for="camera in paginatedCameras"
                                 :key="camera.id"
-                                class="camera-item border rounded-lg p-4 shadow-md"
+                                class=" bg-gray-950 camera-item rounded-lg p-4 shadow-md"
                             >
                                 <img
                                     :src="camera.image"
@@ -389,7 +405,7 @@
                                 <p class="text-gray-600">
                                     {{ camera.description }}
                                 </p>
-                                <p class="text-orange-500 font-bold">
+                                <p class="text-green-500 font-bold">
                                     $ {{ camera.price }}
                                 </p>
                             </div>
@@ -416,7 +432,7 @@
                                 :class="[
                                     'px-4 py-2 rounded transition duration-300',
                                     currentPage === page
-                                        ? 'bg-gradient-to-br from-orange-500 to-orange-400 text-white'
+                                        ? 'bg-gradient-to-br from-green-500 to-green-400 text-white'
                                         : 'bg-gradient-to-br from-gray-700 to-gray-600 text-white hover:from-gray-500 hover:to-gray-400',
                                 ]"
                             >
@@ -446,7 +462,7 @@
                     <div
                         v-for="testimonial in testimonials"
                         :key="testimonial.id"
-                        class="bg-gray-800 rounded-lg p-6 shadow-lg"
+                        class="bg-gray-950 rounded-lg p-6 shadow-lg"
                     >
                         <div class="flex items-center mb-4">
                             <img
@@ -469,7 +485,7 @@
             </section>
         </main>
         <!-- FOOTER -->
-        <footer class="bg-gray-900 py-12">
+        <footer class="bg-gray-950 py-11">
             <div class="container mx-auto px-4">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div>
@@ -500,7 +516,7 @@
                                     "
                                     class="text-gray-400 hover:text-white transition duration-300"
                                 >
-                                    FAQLink
+                                    FAQ
                                 </Link>
                             </li>
                             <li>
@@ -808,7 +824,7 @@ export default {
     transition: background-color 0.3s ease;
 }
 .pagination button:hover:not(:disabled) {
-    background-color: #f97316; /* Tailwind orange-500 */
+    background-color: #1cd600; /* Tailwind orange-500 */
     color: white;
 }
 
