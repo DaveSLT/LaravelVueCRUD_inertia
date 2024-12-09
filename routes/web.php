@@ -6,6 +6,11 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\CameraController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SocialiteController;
+
+Route::get('auth/google', [SocialiteController::class, 'googleLogin'])->name('auth.google');
+Route::get('auth/google-callback', [SocialiteController::class, 'googleCallback']);
+
 
 
 //User dashboard

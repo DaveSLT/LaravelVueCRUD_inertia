@@ -48,12 +48,3 @@ defineProps({
         </div>
     </AuthenticatedLayout>
 </template>
-<!-- 
-<script>
-export default {
-    props: {
-        mustVerifyEmail: Boolean,
-        status: String,
-    },
-};
-</script> -->

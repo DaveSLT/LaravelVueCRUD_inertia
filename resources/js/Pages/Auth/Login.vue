@@ -7,7 +7,6 @@ import PrimaryButton from "@/Components/PrimaryButton.vue";
 import TextInput from "@/Components/TextInput.vue";
 import { Head, Link, useForm } from "@inertiajs/vue3";
 
-
 defineProps({
     canResetPassword: {
         type: Boolean,
@@ -32,24 +31,18 @@ const submit = () => {
 
 <template>
     <div class="min-h-screen bg-gray-900 flex items-center justify-center">
-
-
-
-       
-            <!-- Camera Image -->
-            <div class="md:w-1/2 relative order-2 md:order-1">
-              <div class="absolute inset-0 bg-gradient-to-r from-green-500 to-purple-600 rounded-full filter blur-[100px] opacity-30 animate-pulse"></div>
-              <img
+        <!-- Camera Image -->
+        <div class="md:w-1/2 relative order-2 md:order-1">
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-green-500 to-purple-600 rounded-full filter blur-[100px] opacity-30 animate-pulse"
+            ></div>
+            <img
                 src="/img/nikon-z-cam.png"
                 alt="Nikon_zcam"
                 class="w-full max-w-md mx-auto relative z-10 camera-slide"
                 ref="cameraImage"
-              />
-            </div>
-
-
-
-
+            />
+        </div>
 
         <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
             <Head title="Log in" />
@@ -120,13 +113,23 @@ const submit = () => {
                 </div>
 
                 <div class="mt-4 flex justify-center">
-                    <a href="#" class="flex items-center justify-center w-full py-2 px-4 border border-transparent rounded-md text-sm font-medium text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-700">
-                      <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.707 7.707a1 1 0 0 0-1.414-1.414L12 11.586 8.707 8.293a1 1 0 0 0-1.414 1.414L10.586 13H6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h4v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3h4a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1h-4.586l2.293-2.293z" />
-                      </svg>
-                      Sign in with Google
+                    <a
+                        :href="route('auth.google')"
+                        class="flex items-center justify-center w-full py-2 px-4 border border-transparent rounded-md text-sm font-medium text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-700"
+                    >
+                        <svg
+                            class="w-5 h-5 mr-2"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                        >
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.707 7.707a1 1 0 0 0-1.414-1.414L12 11.586 8.707 8.293a1 1 0 0 0-1.414 1.414L10.586 13H6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h4v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3h4a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1h-4.586l2.293-2.293z"
+                            />
+                        </svg>
+                        Sign in with Google
                     </a>
-                  </div>
+                </div>
 
                 <div class="mt-4 flex items-center justify-end">
                     <Link
@@ -158,76 +161,75 @@ const submit = () => {
     </div>
 </template>
 
-
 <style scoped>
-  /* Keyframe animation for the floating effect */
-  @keyframes cameraFloat {
+/* Keyframe animation for the floating effect */
+@keyframes cameraFloat {
     0% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
     50% {
-      transform: translateY(-10px);
+        transform: translateY(-10px);
     }
     100% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
-  }
-  
-  /* Apply the camera float animation */
-  .camera-slide {
-    animation: cameraFloat 2s ease-in-out infinite;
-  }
-  
-  /* Slide-in effect for the content */
-  @keyframes contentSlideIn {
-    0% {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .content-slide {
-    animation: contentSlideIn 1s ease-out forwards;
-  }
+}
 
-  .leading-lines {
-  animation: move-lines 15s linear infinite;
+/* Apply the camera float animation */
+.camera-slide {
+    animation: cameraFloat 2s ease-in-out infinite;
+}
+
+/* Slide-in effect for the content */
+@keyframes contentSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content-slide {
+    animation: contentSlideIn 1s ease-out forwards;
+}
+
+.leading-lines {
+    animation: move-lines 15s linear infinite;
 }
 
 @keyframes move-lines {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-100px);
-  }
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100px);
+    }
 }
 
 .animate-float {
-  animation: float 3s ease-in-out infinite;
+    animation: float 3s ease-in-out infinite;
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
 }
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
 }
 
 .fade-enter-from,
 .fade-leave-to {
-  opacity: 0;
+    opacity: 0;
 }
-  </style>
-  
+</style>
