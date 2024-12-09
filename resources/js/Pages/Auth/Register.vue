@@ -22,6 +22,18 @@ const submit = () => {
 
 <template>
     <div class="min-h-screen bg-gray-900 flex items-center justify-center">
+
+<!-- Left Image (Camera) -->
+<div class="md:w-1/2 relative order-last md:order-first">
+              <div class="absolute inset-0 bg-gradient-to-r from-green-500 to-purple-600 rounded-full filter blur-[100px] opacity-30 animate-pulse"></div>
+              <img
+                src="/img/canonr6.png"
+                alt="Nikon_zcam"
+                class="w-full max-w-md mx-auto relative z-10 animate-float"
+              />
+            </div>
+
+
         <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-sm">
             <Head title="Register" />
             <h1 class="text-2xl font-bold text-purple-500 text-center mb-4">
@@ -149,3 +161,72 @@ const submit = () => {
         </div>
     </div>
 </template>
+
+<style scoped>
+/* Add custom styles for animation */
+.animate-float {
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 1s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.leading-lines {
+animation: move-lines 15s linear infinite;
+}
+
+@keyframes move-lines {
+0% {
+  transform: translateY(0);
+}
+100% {
+  transform: translateY(-100px);
+}
+}
+
+.animate-float {
+animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+0%, 100% {
+  transform: translateY(0);
+}
+50% {
+  transform: translateY(-15px);
+}
+}
+
+.fade-enter-active,
+.fade-leave-active {
+transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+opacity: 0;
+}
+</style>
+

@@ -546,6 +546,7 @@ import Nikon_Z6 from "/public/img/Nikon_Z6.png";
 import Fujifilm_X_T4 from "/public/img/Fujifilm_X-T4.png";
 import Panasonic_Lumix_GH5 from "/public/img/Panasonic_Lumix_GH5.png";
 import Blackmagic_Pocket_6K from "/public/img/Blackmagic_Pocket_6K.png";
+import canonr6 from "/public/img/canonr6.png";
 
 // Define the props passed from the backend
 const props = defineProps({
