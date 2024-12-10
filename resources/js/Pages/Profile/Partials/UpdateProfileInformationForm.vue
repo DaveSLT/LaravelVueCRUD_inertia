@@ -23,6 +23,7 @@ const form = useForm({
 </script>
 
 <template>
+    <div class="class">
     <section>
         <header>
             <h2 class="text-lg font-medium text-white">Profile Information</h2>
@@ -97,7 +98,7 @@ const form = useForm({
             <div class="flex items-center gap-4">
                 <PrimaryButton
                     :disabled="form.processing"
-                    class="bg-indigo-600 hover:bg-indigo-700"
+                    class="bg-sky-700 hover:bg-sky-500"
                 >
                     Save
                 </PrimaryButton>
@@ -118,4 +119,5 @@ const form = useForm({
             </div>
         </form>
     </section>
+</div>
 </template>

@@ -1,4 +1,7 @@
 <template>
+
+
+    
     <div class="container mx-auto py-12">
         <h1 class="text-4xl font-bold text-center mb-8">Admin Dashboard</h1>
 
@@ -62,3 +65,9 @@ const updateCameraPrice = (camera) => {
     });
 };
 </script>
+
+<style>
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+</style>

@@ -11,56 +11,104 @@ const showingNavigationDropdown = ref(false);
 </script>
 <template>
     <div
-        class="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white"
+        class="min-h-screen bg-gradient-to-r from-teal-950 via-teal-900 to-teal-950 text-white"
     >
         <!-- Header with Navbar -->
         <header
             class="bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg fixed w-full z-10"
         >
-            <div class="container mx-auto px-4 py-4">
+            <div class="container mx-auto px-4 py-3">
                 <div class="flex items-center justify-between">
                     <!-- Logo -->
-                    <Link
-                        :href="route('profile.edit')"
-                        class="flex items-center"
-                    >
-                        <h1
-                            class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
-                        >
-                            ZoomPro
-                        </h1>
-                    </Link>
+                    <Link :href="route('home')" class="text-2xl font-bold tracking-tighter group">
+                    <span class="inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-blue-500 group-hover:from-blue-500 group-hover:to-purple-400 transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                        ZoomPro
+                    </span>
+                </Link>
 
                     <!-- Desktop Navigation -->
-                    <nav class="hidden md:flex space-x-6 items-center">
-                        <NavLink
-                            :href="route('home')"
-                            :active="route().current('home')"
-                            class="text-white hover:text-purple-400"
-                        >
-                            Home
-                        </NavLink>
-                        <NavLink
-                            :href="route('shop')"
-                            :active="route().current('shop')"
-                            class="text-white hover:text-purple-400"
-                        >
-                            Shop
-                        </NavLink>
-                        <NavLink
-                            :href="route('myaccount')"
-                            :active="route().current('myaccount')"
-                            class="text-white hover:text-purple-400"
-                        >
-                            My Account
-                        </NavLink>
-                        <NavLink
-                            :href="route('support')"
-                            :active="route().current('support')"
-                            class="text-white hover:text-purple-400"
-                        >
-                            Support
-                        </NavLink>
+<nav class="hidden md:flex space-x-6 items-center">
+    <Link
+        v-if="$page.props.auth?.user?.email === 'salte@salte.com','andresalvadorgregorio@gmail.com'"
+        :href="route('CameraDashboard')"
+        class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+    >
+    <span class="relative z-10 transition-colors duration-300 group-hover:text-gray-900">Dashboard</span>
+    <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300  rounded-full"></span>
+    </Link>
+    <Link
+        :href="route('home')"
+        class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+        :class="{
+            'bg-gradient-to-r from-blue-500 to-green-600 opacity-100 scale-x-100 text-gray-900': route().current('home')
+        }"
+    >
+        <span
+            class="relative z-10 transition-colors duration-300"
+            :class="{ 'text-gray-900': route().current('home') }"
+        >
+            Home
+        </span>
+        <span
+            class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300 rounded-full"
+            :class="{ 'opacity-100 scale-x-100': route().current('home') }"
+        ></span>
+    </Link>
+    <Link
+        :href="route('shop')"
+        class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+        :class="{
+            'bg-gradient-to-r from-blue-500 to-green-600 opacity-100 scale-x-100 text-gray-900': route().current('shop')
+        }"
+    >
+        <span
+            class="relative z-10 transition-colors duration-300"
+            :class="{ 'text-gray-900': route().current('shop') }"
+        >
+            Shop
+        </span>
+        <span
+            class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300 rounded-full"
+            :class="{ 'opacity-100 scale-x-100': route().current('shop') }"
+        ></span>
+    </Link>
+    <Link
+        :href="route('myaccount')"
+        class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+        :class="{
+            'bg-gradient-to-r from-blue-500 to-green-600 opacity-100 scale-x-100 text-gray-900': route().current('myaccount')
+        }"
+    >
+        <span
+            class="relative z-10 transition-colors duration-300"
+            :class="{ 'text-gray-900': route().current('myaccount') }"
+        >
+            Account
+        </span>
+        <span
+            class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300 rounded-full"
+            :class="{ 'opacity-100 scale-x-100': route().current('myaccount') }"
+        ></span>
+    </Link>
+    <Link
+        :href="route('support')"
+        class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+        :class="{
+            'bg-gradient-to-r from-blue-500 to-green-600 opacity-100 scale-x-100 text-gray-900': route().current('support')
+        }"
+    >
+        <span
+            class="relative z-10 transition-colors duration-300"
+            :class="{ 'text-gray-900': route().current('support') }"
+        >
+            Support
+        </span>
+        <span
+            class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300 rounded-full"
+            :class="{ 'opacity-100 scale-x-100': route().current('support') }"
+        ></span>
+    </Link>
+
 
                         <!-- Settings Dropdown -->
                         <Dropdown align="right" width="48">
@@ -198,7 +246,7 @@ const showingNavigationDropdown = ref(false);
 
         <!-- Page Heading -->
         <header class="bg-gray-800 shadow-lg" v-if="$slots.header">
-            <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-7xl px-4 py-1 sm:px-6 lg:px-8">
                 <slot name="header" />
             </div>
         </header>

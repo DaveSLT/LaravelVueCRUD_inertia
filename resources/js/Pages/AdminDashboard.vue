@@ -1,10 +1,16 @@
 <template>
-    <div class="container mx-auto">
-        <h1 class="text-3xl font-bold text-center mb-6">Admin Dashboard</h1>
+    <div class="min-h-screen bg-gradient-to-r from-teal-900 via-teal-950 to-teal-900  ">
+
+  <!-- Header with Navbar -->
+ 
+                
+    <div class="container mx-auto px-4 py-10 ">
+
+        <h1 class="text-3xl font-bold text-center mb-6 text-white">Admin Dashboard</h1>
 
         <!-- Cameras Management Section -->
         <div class="mb-8">
-            <h2 class="text-2xl font-bold mb-4">Manage Cameras</h2>
+            <h2 class="text-2xl font-bold mb-4 text-white">Manage Cameras</h2>
             <table
                 class="min-w-full bg-gray-800 text-white rounded-lg shadow-lg"
             >
@@ -46,16 +52,16 @@
 
         <!-- Users Management Section -->
         <div>
-            <h2 class="text-2xl font-bold mb-4">User Dashboard</h2>
+            <h2 class="text-2xl font-bold mb-4 text-white">User Dashboard</h2>
             <table
                 class="table-auto w-full border-collapse border border-gray-300"
             >
                 <thead>
                     <tr>
-                        <th class="border border-gray-300 px-4 py-2">ID</th>
-                        <th class="border border-gray-300 px-4 py-2">Name</th>
-                        <th class="border border-gray-300 px-4 py-2">Email</th>
-                        <th class="border border-gray-300 px-4 py-2">
+                        <th class="border border-gray-300 px-4 py-2 text-white">ID</th>
+                        <th class="border border-gray-300 px-4 py-2 text-white">Name</th>
+                        <th class="border border-gray-300 px-4 py-2 text-white">Email</th>
+                        <th class="border border-gray-300 px-4 py-2 text-white">
                             Actions
                         </th>
                     </tr>
@@ -84,6 +90,10 @@
             </table>
         </div>
     </div>
+</div>
+
+
+
 </template>
 
 <script setup>
@@ -111,6 +121,8 @@ const updatePrice = (camera) => {
 };
 </script>
 
-<style scoped>
-/* Add any custom styles here */
+<style>
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 </style>

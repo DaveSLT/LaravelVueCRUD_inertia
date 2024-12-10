@@ -78,20 +78,20 @@ const filteredCamerasWithImages = computed(() => {
 
 <template>
     <div
-        class="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 to-gray-800 text-white"
+        class="min-h-screen flex flex-col bg-gradient-to-r from-teal-950 via-teal-900 to-teal-950 text-white"
     >
         <!-- Navbar -->
         <header
             class="bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg fixed w-full z-10"
         >
             <div
-                class="container mx-auto flex justify-between items-center py-4 px-4"
+                class="container mx-auto flex justify-between items-center py-3 px-4"
             >
-                <h1
-                    class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
-                >
-                    ZoomPro
-                </h1>
+            <Link :href="route('home')" class="text-2xl font-bold tracking-tighter group">
+                    <span class="inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-blue-500 group-hover:from-blue-500 group-hover:to-purple-400 transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                        ZoomPro
+                    </span>
+                </Link>
                 <!-- Navbar links based on authentication state -->
                 <nav v-if="canLogin" class="-mx-3 flex flex-1 justify-end">
                     <!-- Display "Home" if the user is logged in -->
@@ -171,11 +171,11 @@ const filteredCamerasWithImages = computed(() => {
                                 @click="selectedCategory = ''"
                                 class="flex-1 min-w-[120px] text-center p-6 transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer rounded-lg shadow-lg"
                                 :class="{
-                                    'bg-purple-900 text-white':
+                                    'bg-gray-950 text-white':
                                         selectedCategory !== '',
-                                    'bg-purple-850 text-white':
+                                    'bg-gray-950 text-white':
                                         selectedCategory === '',
-                                    'ring-2 ring-orange-500':
+                                    'ring-2 ring-gray-950':
                                         selectedCategory === '',
                                 }"
                             >
@@ -191,11 +191,11 @@ const filteredCamerasWithImages = computed(() => {
                                 @click="selectedCategory = category"
                                 class="flex-1 min-w-[120px] text-center p-6 transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer rounded-lg shadow-lg"
                                 :class="{
-                                    'bg-purple-900 text-white':
+                                    'bg-gray-950 text-white':
                                         selectedCategory !== category,
-                                    'bg-purple-850 text-white':
+                                    'bg-gray-950 text-white':
                                         selectedCategory === category,
-                                    'ring-2 ring-orange-500':
+                                    'ring-2 ring-gray-950':
                                         selectedCategory === category,
                                 }"
                             >
@@ -213,7 +213,7 @@ const filteredCamerasWithImages = computed(() => {
                                 v-model="searchQuery"
                                 type="text"
                                 placeholder="Search cameras..."
-                                class="w-full pl-12 pr-4 py-3 rounded-full bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                class="w-full pl-12 pr-4 py-3 rounded-full bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black-500"
                             />
                             <svg
                                 class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"
@@ -241,7 +241,7 @@ const filteredCamerasWithImages = computed(() => {
                         <div
                             v-for="camera in filteredCamerasWithImages"
                             :key="camera.camera_id"
-                            class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+                            class="bg-gray-950 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
                         >
                             <img
                                 :src="camera.image"
@@ -259,12 +259,12 @@ const filteredCamerasWithImages = computed(() => {
                                 </p>
                                 <div class="flex items-center justify-between">
                                     <span
-                                        class="text-2xl font-bold text-orange-400"
+                                        class="text-2xl font-bold text-green-400"
                                         >${{ camera.camera_price }}</span
                                     >
                                     <Link
                                         :href="route('login')"
-                                        class="bg-purple-600 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-full transition duration-300"
+                                        class="bg-blue-600 hover:bg-green-500 text-white font-bold py-2 px-4 rounded-full transition duration-300"
                                     >
                                         Rent Now
                                     </Link>
@@ -275,7 +275,7 @@ const filteredCamerasWithImages = computed(() => {
                 </div>
             </div>
         </main>
-        <!-- Footer -->
+        <!-- Footer
         <footer class="py-6 bg-gradient-to-br from-gray-900 to-gray-900">
             <div class="container mx-auto text-center text-gray-400">
                 <p>
@@ -283,7 +283,7 @@ const filteredCamerasWithImages = computed(() => {
                     reserved.
                 </p>
             </div>
-        </footer>
+        </footer> -->
     </div>
 </template>
 

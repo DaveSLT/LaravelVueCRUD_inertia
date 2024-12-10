@@ -1,7 +1,7 @@
 <template>
-    <div class="bg-gray-900 text-white min-h-screen">
+    <div class="bg-gradient-to-r from-gray-900 via-teal-950 to-gray-900 text-white min-h-screen">
         <!-- Navigation -->
-        <div class="bg-gray-800 shadow-lg py-4">
+        <div class="bg-gradient-to-r from-teal-950 via-teal-900 to-teal-950 shadow-lg py-4">
             <div
                 class="container mx-auto flex justify-between items-center px-4"
             >
@@ -10,7 +10,7 @@
                     <div class="space-x-4">
                         <Link
                             :href="route('UserDashboard')"
-                            class="text-gray-300 hover:text-white"
+                            class="text-white font-semibold underline decoration-teal-500 underline-offset-4"
                         >
                             User Management
                         </Link>
@@ -26,7 +26,7 @@
         </div>
         <Link
             :href="route('home')"
-            class="flex items-center text-blue-500 hover:text-blue-700"
+            class="flex items-center text-white-500 hover:text-teal-700 py-3 ml-3"
         >
             <!-- Back Icon -->
             <svg
@@ -47,24 +47,24 @@
             <span class="ml-2">Back</span>
         </Link>
         <!-- Content -->
-        <div class="container mx-auto py-8 px-4">
+        <div class="container mx-auto py-2 px-4">
             <h1 class="text-2xl font-bold mb-6 text-center">User Dashboard</h1>
 
             <!-- User Table -->
             <div class="overflow-x-auto">
                 <table
-                    class="table-auto w-full border-collapse bg-gray-800 text-sm shadow-md rounded-lg overflow-hidden"
+                    class="table-auto w-full border-collapse bg-gray-950 text-center text-sm shadow-md rounded-lg overflow-hidden"
                 >
                     <thead>
-                        <tr class="bg-gray-700">
-                            <th class="border border-gray-600 px-4 py-2">ID</th>
-                            <th class="border border-gray-600 px-4 py-2">
+                        <tr class="bg-gray-300">
+                            <th class=" text-black px-4 py-2">ID</th>
+                            <th class=" text-black px-4 py-2">
                                 Name
                             </th>
-                            <th class="border border-gray-600 px-4 py-2">
+                            <th class=" text-black  px-4 py-2">
                                 Email
                             </th>
-                            <th class="border border-gray-600 px-4 py-2">
+                            <th class="text-black  px-4 py-2 ">
                                 Actions
                             </th>
                         </tr>
@@ -73,21 +73,21 @@
                         <tr
                             v-for="user in users"
                             :key="user.id"
-                            class="hover:bg-gray-700"
+                            class="hover:bg-teal-800"
                         >
-                            <td class="border border-gray-600 px-4 py-2">
+                            <td class=" px-4 py-2">
                                 {{ user.id }}
                             </td>
-                            <td class="border border-gray-600 px-4 py-2">
+                            <td class=" px-4 py-2">
                                 {{ user.name }}
                             </td>
-                            <td class="border border-gray-600 px-4 py-2">
+                            <td class=" px-4 py-2">
                                 {{ user.email }}
                             </td>
-                            <td class="border border-gray-600 px-4 py-2">
+                            <td class=" px-4 py-2">
                                 <button
                                     @click="deleteUser(user.id)"
-                                    class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600"
+                                    class="bg-red-900 text-white px-4 py-2 rounded-lg hover:bg-red-600"
                                 >
                                     Delete
                                 </button>

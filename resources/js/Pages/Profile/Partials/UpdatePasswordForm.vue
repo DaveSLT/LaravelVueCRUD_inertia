@@ -103,7 +103,7 @@ const updatePassword = () => {
             <div class="flex items-center gap-4">
                 <PrimaryButton
                     :disabled="form.processing"
-                    class="bg-purple-500 hover:bg-purple-600 text-white"
+                    class="bg-teal-700 hover:bg-teal-500 text-white"
                 >
                     Save
                 </PrimaryButton>
