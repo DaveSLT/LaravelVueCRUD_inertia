@@ -40,7 +40,7 @@ class AuthenticatedSessionController extends Controller
             // Check if user is admin by email
             $user = Auth::user();
             if ($user->email === 'salte@salte.com') {
-                return redirect()->route('Dashboard');
+                return redirect()->route('UserDashboard');
             }
 
             // Redirect regular users

@@ -7,96 +7,136 @@
             class="bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg fixed w-full z-10"
         >
             <div class="container mx-auto px-4 py-3">
-                <div class="container mx-auto flex justify-between items-center">
-                <Link :href="route('home')" class="text-2xl font-bold tracking-tighter group">
-                    <span class="inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-blue-500 group-hover:from-blue-500 group-hover:to-purple-400 transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
-                        ZoomPro
-                    </span>
-                </Link>
+                <div
+                    class="container mx-auto flex justify-between items-center"
+                >
+                    <Link
+                        :href="route('home')"
+                        class="text-2xl font-bold tracking-tighter group"
+                    >
+                        <span
+                            class="inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-blue-500 group-hover:from-blue-500 group-hover:to-purple-400 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                        >
+                            ZoomPro
+                        </span>
+                    </Link>
 
-                   <!-- Desktop Navigation -->
-<nav class="hidden md:flex space-x-6 items-center">
-    <Link
-        v-if="$page.props.auth?.user?.email === 'salte@salte.com','andresalvadorgregorio@gmail.com'"
-        :href="route('CameraDashboard')"
-        class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
-    >
-    <span class="relative z-10 transition-colors duration-300 group-hover:text-gray-900">Dashboard</span>
-    <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300  rounded-full"></span>
-    </Link>
-    <Link
-        :href="route('home')"
-        class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
-        :class="{
-            'bg-gradient-to-r from-blue-500 to-green-600 opacity-100 scale-x-100 text-gray-900': route().current('home')
-        }"
-    >
-        <span
-            class="relative z-10 transition-colors duration-300"
-            :class="{ 'text-gray-900': route().current('home') }"
-        >
-            Home
-        </span>
-        <span
-            class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300 rounded-full"
-            :class="{ 'opacity-100 scale-x-100': route().current('home') }"
-        ></span>
-    </Link>
-    <Link
-        :href="route('shop')"
-        class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
-        :class="{
-            'bg-gradient-to-r from-blue-500 to-green-600 opacity-100 scale-x-100 text-gray-900': route().current('shop')
-        }"
-    >
-        <span
-            class="relative z-10 transition-colors duration-300"
-            :class="{ 'text-gray-900': route().current('shop') }"
-        >
-            Shop
-        </span>
-        <span
-            class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300 rounded-full"
-            :class="{ 'opacity-100 scale-x-100': route().current('shop') }"
-        ></span>
-    </Link>
-    <Link
-        :href="route('myaccount')"
-        class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
-        :class="{
-            'bg-gradient-to-r from-blue-500 to-green-600 opacity-100 scale-x-100 text-gray-900': route().current('myaccount')
-        }"
-    >
-        <span
-            class="relative z-10 transition-colors duration-300"
-            :class="{ 'text-gray-900': route().current('myaccount') }"
-        >
-            Account
-        </span>
-        <span
-            class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300 rounded-full"
-            :class="{ 'opacity-100 scale-x-100': route().current('myaccount') }"
-        ></span>
-    </Link>
-    <Link
-        :href="route('support')"
-        class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
-        :class="{
-            'bg-gradient-to-r from-blue-500 to-green-600 opacity-100 scale-x-100 text-gray-900': route().current('support')
-        }"
-    >
-        <span
-            class="relative z-10 transition-colors duration-300"
-            :class="{ 'text-gray-900': route().current('support') }"
-        >
-            Support
-        </span>
-        <span
-            class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300 rounded-full"
-            :class="{ 'opacity-100 scale-x-100': route().current('support') }"
-        ></span>
-    </Link>
-
+                    <!-- Desktop Navigation -->
+                    <nav class="hidden md:flex space-x-6 items-center">
+                        <Link
+                            v-if="
+                                ($page.props.auth?.user?.email ===
+                                    'salte@salte.com',
+                                'andresalvadorgregorio@gmail.com')
+                            "
+                            :href="route('CameraDashboard')"
+                            class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+                        >
+                            <span
+                                class="relative z-10 transition-colors duration-300 group-hover:text-gray-900"
+                                >Dashboard</span
+                            >
+                            <span
+                                class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300 rounded-full"
+                            ></span>
+                        </Link>
+                        <Link
+                            :href="route('home')"
+                            class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+                            :class="{
+                                'bg-gradient-to-r from-blue-500 to-green-600 opacity-100 scale-x-100 text-gray-900':
+                                    route().current('home'),
+                            }"
+                        >
+                            <span
+                                class="relative z-10 transition-colors duration-300"
+                                :class="{
+                                    'text-gray-900': route().current('home'),
+                                }"
+                            >
+                                Home
+                            </span>
+                            <span
+                                class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300 rounded-full"
+                                :class="{
+                                    'opacity-100 scale-x-100':
+                                        route().current('home'),
+                                }"
+                            ></span>
+                        </Link>
+                        <Link
+                            :href="route('shop')"
+                            class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+                            :class="{
+                                'bg-gradient-to-r from-blue-500 to-green-600 opacity-100 scale-x-100 text-gray-900':
+                                    route().current('shop'),
+                            }"
+                        >
+                            <span
+                                class="relative z-10 transition-colors duration-300"
+                                :class="{
+                                    'text-gray-900': route().current('shop'),
+                                }"
+                            >
+                                Shop
+                            </span>
+                            <span
+                                class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300 rounded-full"
+                                :class="{
+                                    'opacity-100 scale-x-100':
+                                        route().current('shop'),
+                                }"
+                            ></span>
+                        </Link>
+                        <Link
+                            :href="route('myaccount')"
+                            class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+                            :class="{
+                                'bg-gradient-to-r from-blue-500 to-green-600 opacity-100 scale-x-100 text-gray-900':
+                                    route().current('myaccount'),
+                            }"
+                        >
+                            <span
+                                class="relative z-10 transition-colors duration-300"
+                                :class="{
+                                    'text-gray-900':
+                                        route().current('myaccount'),
+                                }"
+                            >
+                                Account
+                            </span>
+                            <span
+                                class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300 rounded-full"
+                                :class="{
+                                    'opacity-100 scale-x-100':
+                                        route().current('myaccount'),
+                                }"
+                            ></span>
+                        </Link>
+                        <Link
+                            :href="route('support')"
+                            class="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300"
+                            :class="{
+                                'bg-gradient-to-r from-blue-500 to-green-600 opacity-100 scale-x-100 text-gray-900':
+                                    route().current('support'),
+                            }"
+                        >
+                            <span
+                                class="relative z-10 transition-colors duration-300"
+                                :class="{
+                                    'text-gray-900': route().current('support'),
+                                }"
+                            >
+                                Support
+                            </span>
+                            <span
+                                class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-green-600 opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300 rounded-full"
+                                :class="{
+                                    'opacity-100 scale-x-100':
+                                        route().current('support'),
+                                }"
+                            ></span>
+                        </Link>
 
                         <!-- Settings Dropdown -->
                         <div class="relative">
@@ -357,13 +397,18 @@
                             class="block text-lg font-medium text-gray-300"
                             >Name</label
                         >
-                        <!-- <input
-                            v-model="contactForm.name"
+                        <input
+                            v-model="form.name"
                             type="text"
                             id="name"
                             class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm p-2 text-white"
                             required
-                        /> -->
+                        />
+                        <span
+                            v-if="form.errors.name"
+                            class="text-red-500 text-sm"
+                            >{{ form.errors.name }}</span
+                        >
                     </div>
 
                     <div>
@@ -372,13 +417,18 @@
                             class="block text-lg font-medium text-gray-300"
                             >Email</label
                         >
-                        <!-- <input
-                            v-model="contactForm.email"
+                        <input
+                            v-model="form.email"
                             type="email"
                             id="email"
                             class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm p-2 text-white"
                             required
-                        /> -->
+                        />
+                        <span
+                            v-if="form.errors.email"
+                            class="text-red-500 text-sm"
+                            >{{ form.errors.email }}</span
+                        >
                     </div>
 
                     <div>
@@ -387,18 +437,24 @@
                             class="block text-lg font-medium text-gray-300"
                             >Message</label
                         >
-                        <!-- <textarea
-                            v-model="contactForm.message"
+                        <textarea
+                            v-model="form.message"
                             id="message"
                             rows="4"
                             class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm p-2 text-white"
                             required
-                        ></textarea> -->
+                        ></textarea>
+                        <span
+                            v-if="form.errors.message"
+                            class="text-red-500 text-sm"
+                            >{{ form.errors.message }}</span
+                        >
                     </div>
 
                     <button
                         type="submit"
-                        class="bg-yellow-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition duration-300"
+                        class="bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-purple-700 transition duration-300"
+                        :disabled="form.processing"
                     >
                         Send Message
                     </button>
@@ -426,43 +482,26 @@ import NavLink from "@/Components/NavLink.vue";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink.vue";
 import { Link } from "@inertiajs/vue3";
 
+import { useForm } from "@inertiajs/vue3";
+
 const showingNavigationDropdown = ref(false);
-</script>
 
-<script>
-import { ref } from "vue";
+const form = useForm({
+    name: "",
+    email: "",
+    message: "",
+});
 
-export default {
-    setup() {
-        const mobileMenuOpen = ref(false);
-        const contactForm = ref({
-            name: "",
-            email: "",
-            message: "",
-        });
-
-        const toggleMobileMenu = () => {
-            mobileMenuOpen.value = !mobileMenuOpen.value;
-        };
-
-        const submitContactForm = () => {
-            console.log("Form submitted:", contactForm.value);
-            alert("Thank you for contacting us! We will respond shortly.");
-            contactForm.value = { name: "", email: "", message: "" };
-        };
-
-        return {
-            mobileMenuOpen,
-            contactForm,
-            toggleMobileMenu,
-            submitContactForm,
-        };
-    },
+const submitContactForm = () => {
+    form.post(route("support.send-email"), {
+        onSuccess: () => {
+            alert("Your message has been sent successfully!");
+            form.reset();
+        },
+        onError: (errors) => {
+            console.error(errors);
+            alert("Failed to send your message. Please try again.");
+        },
+    });
 };
 </script>
-
-<style>
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-</style>

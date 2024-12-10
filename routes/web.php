@@ -8,6 +8,32 @@ use App\Http\Controllers\CameraController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SocialiteController;
 
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
+
+use App\Http\Controllers\SupportController;
+
+Route::post('/support/send-email', [SupportController::class, 'sendEmail'])->name('support.send-email');
+
+
+//email verification
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+
+    return redirect('/home');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+
+    return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+
 Route::get('auth/google', [SocialiteController::class, 'googleLogin'])->name('auth.google');
 Route::get('auth/google-callback', [SocialiteController::class, 'googleCallback']);
 
@@ -27,11 +53,6 @@ Route::get('/CameraDashboard', [CameraController::class, 'dashboard'])
 Route::post('/cameras/{camera}', [CameraController::class, 'updatePrice'])
     ->middleware(['auth', 'admin'])
     ->name('cameras.updatePrice');
-
-//DASHBOARD
-Route::get('/Dashboard', function () {
-    return Inertia::render('AdminDashboard');
-})->middleware(['auth', 'admin'])->name('Dashboard');
 
 //Guest_shop
 Route::get('/shop_guest', [CameraController::class, 'index_guest'])->name('shop_guest');
