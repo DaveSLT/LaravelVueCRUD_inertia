@@ -18,6 +18,7 @@ class Payments extends Model
         'days_rent',
         'rent_date',
         'return_date',
+        'user_id', 
     ];
     public function user()
     {

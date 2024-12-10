@@ -48,8 +48,14 @@ class CameraController extends Controller
     public function store(Request $request)
     {
 
+        //dd(auth()->id());
+
+        if (!auth()->check()) {
+            return back()->withErrors(['message' => 'You must be logged in to perform this action.']);
+        }
+    
+        // Validate the input data
         $validated = $request->validate([
-            'user_id' =>   auth()->id(),
             'camera_id' => 'required|exists:cameras,camera_id',
             'camera_name' => 'required|string',
             'camera_category' => 'required|string',
@@ -59,7 +65,13 @@ class CameraController extends Controller
             'rent_date' => 'required|date',
             'return_date' => 'required|date|after_or_equal:rent_date',
         ]);
-
+    
+        // Add authenticated user's ID
+        $validated['user_id'] = auth()->id();
+    
+        // Store the validated data in the database
         Payments::create($validated);
+    
+        return back()->with('success', 'Payment stored successfully.');
     }
 }
