@@ -462,7 +462,7 @@
             </section>
         </main>
 
-        <footer class="bg-gray-900 py-4">
+        <footer class="bg-gray-950 py-4">
             <div class="container mx-auto px-4 text-center text-gray-400">
                 <p>
                     &copy; {{ new Date().getFullYear() }} ZoomPro. All rights

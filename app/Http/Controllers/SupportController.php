@@ -19,7 +19,7 @@ class SupportController extends Controller
 
         Mail::raw($validated['message'], function ($message) use ($validated, $adminEmail) {
             $message->to($adminEmail)
-                ->subject("Support Inquiry from {$validated['name']}")
+                ->subject("ZoomPro Support Inquiry, {$validated['name']}")
                 ->replyTo($validated['email'], $validated['name']);
         });
 
